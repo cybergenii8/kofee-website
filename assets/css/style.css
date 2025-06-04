@@ -1,0 +1,171 @@
+@layer fonts {
+  /* bebas-neue-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/bebas-neue-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* source-serif-4-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/source-serif-4-v13-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* source-serif-4-300italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Source Serif 4";
+    font-style: italic;
+    font-weight: 300;
+    src: url("../fonts/source-serif-4-v13-latin-300italic.woff2")
+      format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* source-serif-4-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/source-serif-4-v13-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+}
+
+@layer colors {
+  :root {
+    --c-white: hsl(0, 0%, 100%);
+    --c-orange: hsl(23, 83%, 60%);
+    --c-gray-100: #393330;
+    --c-gray-300: #4f4844;
+    --c-gray-600: #d2cfcc;
+    --c-gray-700: #d9d9d9;
+    --c-gray-800: #edebe8;
+    --c-gray-900: #f5f4f2;
+    --color-background-light: var(--c-gray-900);
+    --color-background-reservation: var(--c-gray-800);
+    --color-text-body-dark: var(--c-gray-300);
+    --color-text-heading-dark: var(--c-gray-100);
+    --color-text-button: var(--c-white);
+    --color-lines: var(--c-gray-600);
+  }
+}
+
+@layer typography {
+  :root {
+    --fs-104: calc(104 / 16 * 1rem);
+    --fs-64: calc(64 / 16 * 1rem);
+    --fs-44: calc(44 / 16 * 1rem);
+    --fs-40: calc(40 / 16 * 1rem);
+    --fs-32: calc(32 / 16 * 1rem);
+    --fs-28: calc(28 / 16 * 1rem);
+    --fs-24: calc(24 / 16 * 1rem);
+    --fs-22: calc(22 / 16 * 1rem);
+    --fs-20: calc(20 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
+    --fs-16: calc(16 / 16 * 1rem);
+    --font-size-h2: var(--fs-40);
+    --font-size-h2-sm: var(--fs-32);
+    --font-size-h3: var(--fs-32);
+    --font-size-h3-sm: var(--fs-20);
+    --font-size-p-l: var(--fs-20);
+    --font-size-p: var(--fs-16);
+
+    @media (width >= calc(700 / 16 * 1rem)) {
+      --font-size-h2: var(--fs-64);
+      --font-size-h2-sm: var(--fs-40);
+      --font-size-h3: var(--fs-40);
+      --font-size-h3-sm: var(--fs-24);
+      --font-size-p-l: var(--fs-24);
+      --font-size-p: var(--fs-18);
+    }
+
+    @media (width >= calc(1100 / 16 * 1rem)) {
+      --font-size-h2: var(--fs-104);
+      --font-size-h2-sm: var(--fs-44);
+      --font-size-h3: var(--fs-44);
+      --font-size-h3-sm: var(--fs-28);
+      --font-size-p-l: var(--fs-28);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-h2);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+
+    &.small {
+      font-size: var(--font-size-h2-sm);
+    }
+  }
+
+  h3 {
+    font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-h3);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+
+    &.small {
+      font-family: "Source Serif 4", Arial, Helvetica, sans-serif;
+      font-size: var(--font-size-h3-sm);
+      font-weight: 400;
+      line-height: 1.25;
+    }
+  }
+
+  p {
+    font-size: var(--font-size-p);
+    font-weight: 300;
+    line-height: 1.5;
+
+    &.large {
+      font-size: var(--font-size-p-l);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer global {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-background-light);
+    color: var(--color-text-body-dark);
+    font-family: "Source Serif 4", Arial, Helvetica, sans-serif;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 11px;
+    overflow: hidden;
+  }
+}
